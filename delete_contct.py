@@ -1,0 +1,1 @@
+print("delete cont text")
