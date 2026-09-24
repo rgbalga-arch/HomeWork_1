@@ -5,3 +5,5 @@ print("hello world")
 #git commit -m "Add test.py"
 #git log
 #git add . добавить все файлы
+#git commit -am "updated test.py"
+#git pull
