@@ -13,4 +13,6 @@ print("hello world")
 
 #git log --oneline
 
+#git clone https://github.com/rgbalga-arch/HomeWork_1.git     ССФЛКА НА ЧУЖОЙ РЕПОЗИТОРИЙ
+
 print("privet")
