@@ -10,3 +10,5 @@ print("hello world")
 
 #git push -u origin main
 #git pull
+
+print("privet")
