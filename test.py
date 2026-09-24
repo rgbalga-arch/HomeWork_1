@@ -6,4 +6,7 @@ print("hello world")
 #git log
 #git add . добавить все файлы
 #git commit -am "updated test.py"
+
+
+#git push -u origin main
 #git pull
