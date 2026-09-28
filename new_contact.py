@@ -1,12 +1,16 @@
 from pathlib import Path
-contacts_path = Path("contacts.json")
 import json
+#data_cont = []
 
-if not contacts_path.exists():
-    with open("contacts.json", "w", encoding="UTF-8") as contacts_file:
-        data_cont = contacts_file.read()
 
-else:
+
+def new_reg():
+    contacts_path = Path("contacts.json")
+    data_cont = []
+    if contacts_path.exists():
+        with open(contacts_path, "r", encoding="UTF-8") as contacts_file:
+            for line in contacts_file:
+                data_cont.append(json.loads(line))
     name = input("напишите имя ")
     while True:
         try:
@@ -14,14 +18,16 @@ else:
             break
         except ValueError:
             print("Ошибка! Введите только цифры.")
-    comment = input("Напишите комментарий ")
 
+    for contact in data_cont:
+        if phone == contact["phone"]:
+            print("Ошибка! Такой номер уже существует.")
+            return
+
+
+    comment = input("Напишите комментарий ")
+    phone_list = {"name": name, "phone": phone, "comment": comment}
 
     with open("contacts.json", "a", encoding="UTF-8") as contacts_file:
-        phone_list = {"name": name, "phone": phone, "comment": comment}
         json.dump(phone_list, contacts_file, ensure_ascii=False)
         contacts_file.write("\n")
-
-with open("contacts.json", "r", encoding="UTF-8") as contacts_file:
-    data = contacts_file.read()
-print(data)
