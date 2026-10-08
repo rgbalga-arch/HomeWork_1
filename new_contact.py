@@ -12,12 +12,24 @@ def new_reg():
             for line in contacts_file:
                 data_cont.append(json.loads(line))
     name = input("напишите имя ")
+
     while True:
         try:
             phone = int(input("Введите номер телефона: "))
             break
         except ValueError:
             print("Ошибка! Введите только цифры.")
+
+    # def int_check() -> int:
+    #     phone = input("Введите номер телефона: ")
+    #
+    #     while not phone.isdigit():
+    #         print("Ошибка! Введите только цифры.")
+    #         phone = input("Введите номер телефона: ")
+    #     return int(phone)
+    #
+    # phone = int_check()
+    # print(phone)
 
     for contact in data_cont:
         if phone == contact["phone"]:
